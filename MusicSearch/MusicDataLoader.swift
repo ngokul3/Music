@@ -10,10 +10,39 @@ import Foundation
 
 class MusicDataLoader
 {
-    var trackURL : String { return  "https://itunes.apple.com/search?term=tom+waits"}
+    private var trackURL : String { return  "https://itunes.apple.com/search?term=tom+waits"}
+    
+    private var lstTrack: [Track] = []
+    
+    var TrackList : [Track]
+        {
+        get
+        {
+            if ( lstTrack.count == 0)
+            {
+                LoadTrack(){
+                    tracks in
+                    self.lstTrack = tracks
+                }
+            }
+            return lstTrack
+        }
+        
+        set(tracks) {
+            lstTrack = tracks
+            
+        }
+        
+    }
     
     
-    func LoadTrack(completion: @escaping ([Track]) -> Void)
+    
+    
+    
+    
+    
+    
+   private func LoadTrack(completion: @escaping ([Track]) -> Void)
     {
     
     let requestURL: NSURL = NSURL(string: trackURL)!
@@ -25,7 +54,6 @@ class MusicDataLoader
     (data, response, error) -> Void in
     
      
-    var lstTrack: [Track] = []
     
     
     if let json = try? JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String:AnyObject] {
@@ -34,10 +62,10 @@ class MusicDataLoader
         
         
         if let track = try? Track(json: result) {
-                        lstTrack.append(track)
+                        self.lstTrack.append(track)
                     }
         }
-        completion(lstTrack)
+        completion(self.lstTrack)
 
         
         }

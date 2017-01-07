@@ -13,7 +13,7 @@ class MusicDataProcessor
 {
     func ProcessMusicSearch(searchableEntity: SearchableMusicEntity?, searchItem: String?)->[Track]?
     {
-        var lstTrack = [Track]()
+        var lstTrack = MusicDataManager.sharedTransitInstance.TrackList
         
        
         guard  searchableEntity  != nil else
@@ -23,13 +23,6 @@ class MusicDataProcessor
         
         
         
-        MusicDataManager.sharedTransitInstance.LoadTrack()
-            {
-            
-            tracks in
-            
-            lstTrack = tracks
-        }
         
         if(lstTrack.count == 0)
         {

@@ -98,7 +98,14 @@ class Track
     var PrimaryGenreName:String?
     var IsStreamable:Bool?
     
-    init(json: [String: Any]) throws {
+    required init()
+    {
+       
+    }
+    convenience init(json: [String: Any]) throws {
+        
+        self.init()
+        
         // Extract name
         guard (json["wrapperType"] as? String) != nil else {
             throw MusicError.missing("WrapperType")
