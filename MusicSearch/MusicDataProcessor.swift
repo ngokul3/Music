@@ -11,12 +11,48 @@ import Foundation
 
 class MusicDataProcessor
 {
-    func ProcessMusicSearch(searchableEntity: SearchableMusicEntity)->[Track]
+    func ProcessMusicSearch(searchableEntity: SearchableMusicEntity?, searchItem: String?)->[Track]?
     {
         var lstTrack = [Track]()
         
+       
+        guard  searchableEntity  != nil else
+        {
+            return nil
+        }
         
         
+        
+        MusicDataManager.sharedTransitInstance.LoadTrack()
+            {
+            
+            tracks in
+            
+            lstTrack = tracks
+        }
+        
+        if(lstTrack.count == 0)
+        {
+            return nil
+        }
+        
+        switch searchableEntity!
+        {
+        case .ArtistName:
+            lstTrack = lstTrack.filter({$0.ArtistName == searchItem})
+            
+            
+        case .CollectionName:
+            
+            lstTrack = lstTrack.filter({$0.CollectionName == searchItem})
+            
+        case .TrackName:
+            
+            
+            lstTrack = lstTrack.filter({$0.TrackName == searchItem})
+            
+       
+        }
         
         return lstTrack
     }
