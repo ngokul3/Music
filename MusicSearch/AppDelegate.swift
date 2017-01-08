@@ -16,6 +16,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        /* 
+         
+         
+         If the list of data given is static and small, I will populate the record into User defaults.
+         
+         If the list of data given is static and huge, I will pre-populate into sqlite using COre data.
+         
+         If the list of data given is static and very very huge, I will use CloudKit service. I will prepopulate cloud kit and use Cloud Kit api to fetch details
+         
+         
+         IN this case, due to limited time , I'm populating data every time the user launches the app.
+         
+         */
         let lyricsURL: NSURL = NSURL(string: "http://lyrics.wikia.com/api.php?func=getSong&artist=Tom+Waits&song=new+coat+of+paint&fmt=json")!
         let lyricsURLRequest:  NSMutableURLRequest = NSMutableURLRequest(url: lyricsURL as URL)
 

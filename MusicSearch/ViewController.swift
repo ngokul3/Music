@@ -34,6 +34,20 @@ class ViewController: UIViewController {
         }
 
     }
+    
+    /* 
+     
+     
+     I would set up a dynamic search text control instead of button approach.
+     
+     As the user types in Artist names or Track name, I will populate the grid.
+     
+     I will eliminate button search if I have more time
+     
+     
+     Also the Controls in STORYBOARD can be done with Auto Layout features.
+     
+     */
     @IBAction func btnSearch2(_ sender: Any) {
         
         
@@ -56,12 +70,26 @@ class ViewController: UIViewController {
     }
     @IBAction func txtSearchItemEndEdit(_ sender: Any) {
         
+        
+        /*Can implement some validation*/
            }
     
     @IBOutlet weak var txtSearchItem: UITextField!
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        /* 
+         
+         Initially thought about setting a picker that will contain all searchable items like Artist names, Track Name,...etc.
+         
+         This was over kill and not necessary.
+         
+         Please ignroe the enum - SearchableMusicEntity
+         
+         */
+        
         
       //   self.pickerData = [SearchableMusicEntity.ArtistName.description, SearchableMusicEntity.CollectionName.description, SearchableMusicEntity.TrackName.description]
         // Do any additional setup after loading the view, typically from a nib.
@@ -93,7 +121,7 @@ class ViewController: UIViewController {
             
             let viewController1 = segue.destination as! MusicTableViewController
             viewController1.arrayTracks = lstTrack
-            // viewController1.distinctTripHeadSign = setTripHeadSign
+            
             self.addChildViewController(viewController1)
         }
         

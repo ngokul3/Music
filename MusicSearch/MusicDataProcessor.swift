@@ -13,8 +13,18 @@ class MusicDataProcessor
 {
     func ProcessMusicSearch(searchItem: String?)->[Track]?
     {
+        
+        
         var lstTrack = MusicDataManager.sharedTransitInstance.TrackList
-       // let ss = searchItem.
+   
+        
+        /*
+         I will implement Extensions on Array to handle Case scenarios instead of every item $0. uppercased()
+         
+        
+         
+         */
+        
         
         let searchItem = searchItem?.uppercased()
         

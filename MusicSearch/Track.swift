@@ -109,6 +109,18 @@ class Track
         
         self.init()
         
+        
+        /*
+         
+         
+         IDeally I will populate all members. Due to limited time, I'm not doing this.
+         
+         The currency can be dollar sign instead of USD.
+         
+         The price can be formatted to display.
+         
+         
+         */
     
         guard (json["artistName"] as? String) != nil else {
             throw MusicError.missing("ArtistName")

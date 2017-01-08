@@ -128,6 +128,19 @@ class MusicDataLoader
     
     func parseCSV (_ contentsOfURL: URL, encoding: String.Encoding) -> [(ItemKey:String, ItemValue:String)]? {
         
+        
+        /*
+         
+        Would have implemented well tested parse CSV method that looks clean and easy for future extensions....
+         I can unit test this method with number of test data.
+         
+         
+         
+         
+         */
+        
+        
+        
         // Load the CSV file and parse it
         let delimiter = "':"
         

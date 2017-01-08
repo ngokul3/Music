@@ -17,6 +17,14 @@ class TrackViewCell: UITableViewCell {
     
     @IBOutlet weak var lblTrack: UILabel!
     @IBOutlet weak var lblArtist: UILabel!
+    
+    
+    /*
+     
+     I can customize the cell with images. At the moment, I'm only showing 2 records (Track and Artist) tue to time senstivity.
+     
+     
+     */
   //  @IBOutlet weak var lblCollection: UILabel!
  //   @IBOutlet weak var lblFilingStatus: UILabel!
     override func awakeFromNib() {

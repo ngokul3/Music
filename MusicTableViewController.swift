@@ -51,7 +51,6 @@ class MusicTableViewController: UITableViewController {
         
         cell.lblArtist.text = track.ArtistName?.description
         cell.lblTrack.text = track.TrackName?.description
-    //cell.lblCollection.text = track.CollectionName?.description
         
         
         
@@ -83,7 +82,7 @@ class MusicTableViewController: UITableViewController {
                 {
                     if (trackItem.ArtistName  == nil)
                     {
-                        trackItem.ArtistName = ""
+                        trackItem.ArtistName = "" 
                     }
                     
                     if ( trackItem.CollectionName == nil)

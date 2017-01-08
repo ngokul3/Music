@@ -21,6 +21,15 @@ class LyricsViewController: UIViewController {
     @IBOutlet weak var lblTrackName: UILabel!
     @IBAction func btnexitclick(_ sender: Any) {
         
+        
+        /*
+         
+         I can implement proper navigation contol between View Controllers.
+         
+         Due to limited time, I'm just dismissing the last opened View Controller.
+         
+         
+         */
         self.dismiss(animated: false, completion: nil)
      //   self.performSegue(withIdentifier: "backtomusic", sender: nil)
         
@@ -62,6 +71,13 @@ class LyricsViewController: UIViewController {
  
       lblSOng.text = varSong
         lblLyrics.text = varLyrics
+        
+        
+        
+        /*
+         IDeally URL should be a link to navigate.
+         
+         */
         lblLyricsURL.text = varLyricsURL
         // Do any additional setup after loading the view.
     }
