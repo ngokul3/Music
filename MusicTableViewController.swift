@@ -10,14 +10,12 @@ import UIKit
 
 class MusicTableViewController: UITableViewController {
 
+    @IBOutlet var MusicTableView: UITableView!
+    
+     var arrayTracks = [Track]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,69 +25,102 @@ class MusicTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
+   
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 1
     }
-
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        let recordCount = arrayTracks.count
+        return recordCount
     }
-
-    /*
+    
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+         
+        
+        let cellIdentifier = "trackSignCell"
+        
+        let track = arrayTracks[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath as IndexPath) as! TrackViewCell
+        
+        cell.lblArtist.text = track.ArtistName?.description
+        cell.lblTrack.text = track.TrackName?.description
+    //cell.lblCollection.text = track.CollectionName?.description
+        
+        
+        
         return cell
     }
-    */
+    
 
+    
+    
+    
     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func prepare(for segue: UIStoryboardSegue,
+                          sender: Any?) {
+
+        let identifier = segue.identifier
+        if ( identifier == "showLyrics")
+        {
+            if (arrayTracks == nil)
+            {
+                return
+            }
+            
+            if let lyricsViewController = segue.destination as? LyricsViewController{
+                
+                let row = tableView.indexPathForSelectedRow!.row
+                let trackItem = arrayTracks[row].
+                
+                let trips = lstResult?.lstTrip.filter({$0.truncatedTripHeadSign == tripHeadSignItem})
+                
+                let stopTime = lstResult?.lstStopTime.filter{
+                    
+                    let x = $0.tripID
+                    let y = trips?.filter({$0.tripID == x})
+                    
+                    if ((y?.count)! > 0)
+                    {
+                        return true
+                    }
+                    else{
+                        return false
+                    }
+                }
+                
+                let stops = lstResult?.lstStop.filter{
+                    let x = $0.stopID
+                    let y = stopTime?.filter{$0.stopID == x}
+                    
+                    if ((y?.count)! > 0)
+                    {
+                        return true
+                    }
+                    else{
+                        return false
+                    }
+                }
+                //todo
+                mapViewController.lstResult = TransitResult()
+                mapViewController.lstResult?.lstStop = stops!
+                mapViewController.lstResult?.lstStopTime = stopTime!
+                mapViewController.lstResult?.lstTrip = trips!
+                
+            }
+            
+        }
     }
     */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    
+    
+    
 
 }

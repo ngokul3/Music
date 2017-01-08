@@ -11,6 +11,9 @@
 		C098A01A1E218B3600768C28 /* MusicDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098A0191E218B3600768C28 /* MusicDataLoader.swift */; };
 		C098A01C1E218B4900768C28 /* MusicDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098A01B1E218B4900768C28 /* MusicDataManager.swift */; };
 		C098A01E1E21986800768C28 /* MusicDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098A01D1E21986800768C28 /* MusicDataProcessor.swift */; };
+		C0C2568D1E2262FF00C33305 /* LyricsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C2568C1E2262FF00C33305 /* LyricsViewController.swift */; };
+		C0C256901E22643100C33305 /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C2568F1E22643100C33305 /* TrackView.swift */; };
+		C0C256921E22832D00C33305 /* LyricsProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C256911E22832D00C33305 /* LyricsProcessor.swift */; };
 		C0EB820E1E21586D0095515C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EB820D1E21586D0095515C /* AppDelegate.swift */; };
 		C0EB82101E21586D0095515C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EB820F1E21586D0095515C /* ViewController.swift */; };
 		C0EB82131E21586D0095515C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0EB82111E21586D0095515C /* Main.storyboard */; };
@@ -44,6 +47,9 @@
 		C098A0191E218B3600768C28 /* MusicDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDataLoader.swift; sourceTree = "<group>"; };
 		C098A01B1E218B4900768C28 /* MusicDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDataManager.swift; sourceTree = "<group>"; };
 		C098A01D1E21986800768C28 /* MusicDataProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDataProcessor.swift; sourceTree = "<group>"; };
+		C0C2568C1E2262FF00C33305 /* LyricsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LyricsViewController.swift; sourceTree = "<group>"; };
+		C0C2568F1E22643100C33305 /* TrackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
+		C0C256911E22832D00C33305 /* LyricsProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LyricsProcessor.swift; sourceTree = "<group>"; };
 		C0EB820A1E21586D0095515C /* MusicSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0EB820D1E21586D0095515C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0EB820F1E21586D0095515C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,13 +99,24 @@
 				C098A0191E218B3600768C28 /* MusicDataLoader.swift */,
 				C098A01B1E218B4900768C28 /* MusicDataManager.swift */,
 				C098A01D1E21986800768C28 /* MusicDataProcessor.swift */,
+				C0C256911E22832D00C33305 /* LyricsProcessor.swift */,
 			);
 			name = LIbrary;
+			sourceTree = "<group>";
+		};
+		C0C2568E1E22642200C33305 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C0C2568F1E22643100C33305 /* TrackView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		C0EB82011E21586D0095515C = {
 			isa = PBXGroup;
 			children = (
+				C0C2568E1E22642200C33305 /* View */,
+				C0C2568C1E2262FF00C33305 /* LyricsViewController.swift */,
 				C08DC0041E21EFCE00A01CB7 /* MusicTableViewController.swift */,
 				C0EB82401E215FEE0095515C /* MyPlayground.playground */,
 				C0EB820C1E21586D0095515C /* MusicSearch */,
@@ -296,13 +313,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0C2568D1E2262FF00C33305 /* LyricsViewController.swift in Sources */,
 				C0EB82101E21586D0095515C /* ViewController.swift in Sources */,
+				C0C256901E22643100C33305 /* TrackView.swift in Sources */,
 				C08DC0051E21EFCE00A01CB7 /* MusicTableViewController.swift in Sources */,
 				C0EB823F1E215EE30095515C /* Song.swift in Sources */,
 				C0EB820E1E21586D0095515C /* AppDelegate.swift in Sources */,
 				C098A01E1E21986800768C28 /* MusicDataProcessor.swift in Sources */,
 				C098A01C1E218B4900768C28 /* MusicDataManager.swift in Sources */,
 				C098A01A1E218B3600768C28 /* MusicDataLoader.swift in Sources */,
+				C0C256921E22832D00C33305 /* LyricsProcessor.swift in Sources */,
 				C0EB823D1E215CEC0095515C /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

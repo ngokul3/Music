@@ -9,6 +9,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Lyrics View Controller-->
+        <scene sceneID="d3u-t1-D42">
+            <objects>
+                <viewController id="WxN-Nw-wGP" customClass="LyricsViewController" customModule="MusicSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fL1-bH-i0t"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kkf-CH-DpO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lb9-58-KMe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gJV-wa-u6m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1380" y="560"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -25,11 +43,11 @@
                                 <rect key="frame" x="0.0" y="211" width="375" height="456"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="Imo-AJ-xzC" kind="embed" id="zQj-Hk-adM"/>
+                                    <segue destination="Imo-AJ-xzC" kind="embed" identifier="ShowTracks" id="zQj-Hk-adM"/>
                                 </connections>
                             </containerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="paW-al-BJN">
-                                <rect key="frame" x="8" y="56" width="359" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Artist or Song" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="paW-al-BJN">
+                                <rect key="frame" x="8" y="36" width="359" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -38,41 +56,20 @@
                                     <action selector="txtSearchItemEndEdit:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="7uA-Rc-MMt"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klq-7N-6Rn">
-                                <rect key="frame" x="120" y="159" width="155" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9b5-bs-GZS">
+                                <rect key="frame" x="99" y="112" width="134" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Search"/>
                                 <connections>
-                                    <action selector="btnSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Q5-UL-0gd"/>
+                                    <action selector="btnSearch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cdK-Aa-hjd"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ErK-F7-mVd">
-                                <rect key="frame" x="0.0" y="12" width="367" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="OntxtSearchablefieldBeginEdit:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="YUk-UM-cYG"/>
-                                    <action selector="OntxtSearchablefieldEndEdit:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="lJe-Iy-qEe"/>
-                                </connections>
-                            </textField>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vZS-Im-jI5">
-                                <rect key="frame" x="0.0" y="86" width="375" height="109"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="raW-sP-fGP"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Kbd-al-4C1"/>
-                                </connections>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="btnSearch" destination="klq-7N-6Rn" id="l5s-hh-a0I"/>
-                        <outlet property="pkSearcableEntiries" destination="vZS-Im-jI5" id="0I3-Hh-IEM"/>
+                        <outlet property="btnSearc" destination="9b5-bs-GZS" id="VbN-7k-HxB"/>
                         <outlet property="txtSearchItem" destination="paW-al-BJN" id="CuK-p8-7au"/>
-                        <outlet property="txtSearchableEntity" destination="ErK-F7-mVd" id="XDg-qn-45i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -88,13 +85,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9og-DF-HoO">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="trackSignCell" id="9og-DF-HoO" customClass="TrackViewCell" customModule="MusicSearch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9og-DF-HoO" id="bUn-FY-5qV">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lblTrack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vo-Za-nxW">
+                                            <rect key="frame" x="224" y="11" width="128" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration" label="txtTrack"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lblArtist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c3C-Pr-Toe">
+                                            <rect key="frame" x="8" y="13" width="89" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <accessibility key="accessibilityConfiguration" label="lblArtist"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="lblArtist" destination="c3C-Pr-Toe" id="GTN-Zf-iwp"/>
+                                    <outlet property="lblTrack" destination="0vo-Za-nxW" id="iha-Ot-w3y"/>
+                                    <segue destination="WxN-Nw-wGP" kind="showDetail" identifier="showLyrics" id="rIh-o5-hF2"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -102,10 +122,13 @@
                             <outlet property="delegate" destination="Imo-AJ-xzC" id="oWv-nB-Qe2"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="MusicTableView" destination="3Fj-Fk-OL3" id="3YE-ZH-Tsn"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KRQ-hm-1qo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-233" y="816"/>
+            <point key="canvasLocation" x="-234.40000000000001" y="814.99250374812596"/>
         </scene>
     </scenes>
 </document>

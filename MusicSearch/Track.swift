@@ -109,32 +109,7 @@ class Track
         
         self.init()
         
-        // Extract name
-        guard (json["wrapperType"] as? String) != nil else {
-            throw MusicError.missing("WrapperType")
-        }
-  
-        guard (json["kind"] as? String) != nil else {
-            throw MusicError.missing("Kind")
-        }
- 
-        
-        guard (json["artistId"] as? IntMax) != nil else {
-            throw MusicError.missing("ArtistId")
-        }
- 
-        
-        guard (json["collectionId"] as? IntMax) != nil else {
-            throw MusicError.missing("CollectionId")
-        }
- 
-        
-        guard (json["trackId"] as? IntMax) != nil else {
-            throw MusicError.missing("TrackId")
-        }
- 
-        
-        
+    
         guard (json["artistName"] as? String) != nil else {
             throw MusicError.missing("ArtistName")
         }
@@ -143,6 +118,11 @@ class Track
         
         guard (json["collectionName"] as? String) != nil else {
             throw MusicError.missing("CollectionName")
+        }
+    
+        
+        guard (json["trackName"] as? String) != nil else {
+            throw MusicError.missing("TrackName")
         }
         
         
@@ -155,6 +135,9 @@ class Track
         self.ArtistName = json["artistName"] as? String
 
         self.CollectionName = json["collectionName"] as? String
+        
+        self.TrackName = json["trackName"] as? String
+
 
         
         

@@ -11,6 +11,7 @@ import XCTest
 
 class MusicSearchTests: XCTestCase {
     var lstTrack = [Track]()
+    var lstSong = [Song]()
     
     
     override func setUp() {
@@ -91,7 +92,7 @@ class MusicSearchTests: XCTestCase {
         
         let track10 = Track()
         
-        track10.ArtistName = "AN4"
+        track10.ArtistName = "ANT4"
         track10.CollectionName = "CN5"
         track10.TrackName = "TN5"
         lstTrack.append(track10)
@@ -99,18 +100,50 @@ class MusicSearchTests: XCTestCase {
         
         let track11 = Track()
         
-        track11.ArtistName = "AN9"
+        track11.ArtistName = "AN19"
         track11.CollectionName = "CN5"
-        track11.TrackName = "TN5"
+        track11.TrackName = "TN85"
         lstTrack.append(track11)
         
         
         let track12 = Track()
         
         track12.ArtistName = "AN10"
-        track12.CollectionName = "CN7"
+        track12.CollectionName = "CN57"
         track12.TrackName = "TN8"
         lstTrack.append(track12)
+        
+        
+        
+        let song1 = Song()
+        
+        song1.Artist = "AN9"
+        song1.Song = "FD"
+        lstSong.append(song1)
+        
+        let song2 = Song()
+        
+        song2.Artist = "AN10"
+        song2.Song = "CN57"
+        lstSong.append(song2)
+        
+        
+        let song3 = Song()
+        
+        song3.Artist = "ANT4"
+        song3.Song = "CN5"
+        lstSong.append(song3)
+        
+        let song4 = Song()
+        
+        song4.Artist = "ANT4"
+        song4.Song = "CN5"
+        lstSong.append(song4)
+
+        
+        
+        
+        
         
         
     }
@@ -120,27 +153,69 @@ class MusicSearchTests: XCTestCase {
         MusicDataManager.sharedTransitInstance.TrackList = lstTrack
         
         let processor = MusicDataProcessor()
-        let tracks = processor.ProcessMusicSearch(searchableEntity: "ArtistName", searchItem: "AN1")
+        let tracks = processor.ProcessMusicSearch( searchItem: "AN1")
         
-        XCTAssertEqual(tracks?.count, 3)
-        
-        
-        let tracks2 = processor.ProcessMusicSearch(searchableEntity: "CollectionName", searchItem: "CN5")
-        
-        XCTAssertEqual(tracks2?.count, 2)
+        XCTAssertEqual(tracks?.count, 5)
         
         
-        let tracks3 = processor.ProcessMusicSearch(searchableEntity: "TrackName", searchItem: "TN12")
+        if let _ = processor.ProcessMusicSearch( searchItem: "CN5")
+        {
+             XCTAssert(false)
+        }
+        else
+        {
+             XCTAssert(true)
+        }
         
-        XCTAssertEqual(tracks3?.count, 0)
+        let tracks3 = processor.ProcessMusicSearch(searchItem: "T")
+        
+        XCTAssertEqual(tracks3?.count,1 )
         
         
-        let tracks4 = processor.ProcessMusicSearch(searchableEntity: "TrackName", searchItem: "TN8")
+        let tracks4 = processor.ProcessMusicSearch(searchItem: "TN8")
         
-        XCTAssertEqual(tracks4?.count, 1)
+        XCTAssertEqual(tracks4?.count, 2)
+        
+        
+        
         
     }
     
+    func testSearchLyricsProcessor()
+    {
+        MusicDataManager.sharedTransitInstance.SongList = lstSong
+    
+       
+        
+        let processor = LyricsProcessor()
+        if let _ = processor.LyricsSearch(artistItem: "AN19", songItem: "FD3")
+        {
+             XCTAssert(false)
+        }
+        else
+        {
+             XCTAssert(true)
+        }
+     
+        
+        let song2 = processor.LyricsSearch(artistItem: "AN10", songItem: "CN57")
+        
+        
+        XCTAssertEqual(song2?.Artist,"AN10")
+         XCTAssertEqual(song2?.Song,"CN57")
+        
+        let song3 = processor.LyricsSearch(artistItem: "ANT4", songItem: "CN5")
+        
+        
+        XCTAssertEqual(song3?.Artist,"ANT4")
+        XCTAssertEqual(song3?.Song,"CN5")
+
+
+        
+        
+        
+
+    }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.

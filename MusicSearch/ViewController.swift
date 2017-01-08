@@ -8,42 +8,62 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController {
 
-    @IBOutlet weak var txtSearchableEntity: UITextField!
-    @IBOutlet weak var pkSearcableEntiries: UIPickerView!
+    var lstTrack = [Track]()
+    
+    @IBOutlet weak var btnSearc: UIButton!
+    
     @IBAction func btnSearch(_ sender: Any) {
+        
+        let musicProcessor = MusicDataProcessor()
+        
+        if let tracks  =  musicProcessor.ProcessMusicSearch(searchItem: txtSearchItem.text)
+        {
+            lstTrack = tracks
+            
+            
+            let containerViewController = self.childViewControllers[0] as! MusicTableViewController
+            
+            containerViewController.arrayTracks = lstTrack
+            containerViewController.tableView.reloadData()
+            
+            
+            
+            
+        }
+
+    }
+    @IBAction func btnSearch2(_ sender: Any) {
         
         
         let musicProcessor = MusicDataProcessor()
         
-        let lstTrack = musicProcessor.ProcessMusicSearch(searchableEntity: txtSearchableEntity.text, searchItem: txtSearchItem.text)
+        if let tracks  =  musicProcessor.ProcessMusicSearch(searchItem: txtSearchItem.text)
+        {
+            lstTrack = tracks
+            
+            
+            let containerViewController = self.childViewControllers[0] as! MusicTableViewController
+            
+            containerViewController.arrayTracks = lstTrack
+            containerViewController.tableView.reloadData()
+            
+
+            
+            
+        }
     }
     @IBAction func txtSearchItemEndEdit(_ sender: Any) {
         
-        pkSearcableEntiries.isHidden = true
-
-    }
+           }
     
     @IBOutlet weak var txtSearchItem: UITextField!
-    @IBAction func OntxtSearchablefieldEndEdit(_ sender: Any) {
-        pkSearcableEntiries.isHidden = true
-        
-    }
-    @IBAction func OntxtSearchablefieldBeginEdit(_ sender: Any) {
-        
-        pkSearcableEntiries.isHidden = false
-    }
-    
-    @IBOutlet weak var btnSearch: UIButton!
-    
-    var pickerData: [String] = [String]()
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         self.pickerData = [SearchableMusicEntity.ArtistName.description, SearchableMusicEntity.CollectionName.description, SearchableMusicEntity.TrackName.description]
-        pkSearcableEntiries.isHidden = false
+      //   self.pickerData = [SearchableMusicEntity.ArtistName.description, SearchableMusicEntity.CollectionName.description, SearchableMusicEntity.TrackName.description]
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -58,33 +78,29 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     // The number of rows of data
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
     
-    // The data to return for the row and component (column) that's being passed in
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
-    }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
-    {
+    
+   
+   
+    
+    override func prepare(for segue: UIStoryboardSegue,
+                          sender: Any?) {
         
-        txtSearchableEntity.text = pickerData[row]
+        let identifier = segue.identifier
+        if ( identifier == "ShowTracks")
+        {
+            
+            let viewController1 = segue.destination as! MusicTableViewController
+            viewController1.arrayTracks = lstTrack
+            // viewController1.distinctTripHeadSign = setTripHeadSign
+            self.addChildViewController(viewController1)
+        }
+        
+        
     }
     
     
-    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
-        if(textField == txtSearchableEntity)
-        {
-            pkSearcableEntiries.isHidden = false
-            return false
-        }
-        else
-        {
-            return true
-        }
-    }
     
     
     
