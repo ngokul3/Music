@@ -188,16 +188,7 @@ class MusicSearchTests: XCTestCase {
        
         
         let processor = LyricsProcessor()
-        if let _ = processor.LyricsSearch(artistItem: "AN19", songItem: "FD3")
-        {
-             XCTAssert(false)
-        }
-        else
-        {
-             XCTAssert(true)
-        }
-     
-        
+               
         let song2 = processor.LyricsSearch(artistItem: "AN10", songItem: "CN57")
         
         

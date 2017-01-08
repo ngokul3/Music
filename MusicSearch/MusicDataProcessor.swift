@@ -18,7 +18,7 @@ class MusicDataProcessor
        
         guard  searchItem  != nil else
         {
-            return nil
+            return lstTrack
         }
         
         
@@ -27,8 +27,8 @@ class MusicDataProcessor
             return nil
         }
         
-        let artistNameCount = lstTrack.filter{($0.ArtistName?.contains(searchItem!))!}
-        let trackCount = lstTrack.filter{($0.TrackName?.contains(searchItem!))!}
+        let artistNameCount = lstTrack.filter{($0.ArtistName?.lowercased().contains(searchItem!.lowercased()))!}
+        let trackCount = lstTrack.filter{($0.TrackName?.lowercased().contains(searchItem!.lowercased()))!}
         
         
         if artistNameCount.count > 0 {

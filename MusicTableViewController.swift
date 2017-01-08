@@ -62,62 +62,100 @@ class MusicTableViewController: UITableViewController {
     
     
     
-    /*
+    
     override func prepare(for segue: UIStoryboardSegue,
                           sender: Any?) {
 
         let identifier = segue.identifier
         if ( identifier == "showLyrics")
         {
-            if (arrayTracks == nil)
-            {
-                return
-            }
+        
+            let lyricsProcessor = LyricsProcessor()
+   
             
             if let lyricsViewController = segue.destination as? LyricsViewController{
                 
                 let row = tableView.indexPathForSelectedRow!.row
-                let trackItem = arrayTracks[row].
+                let trackItem = arrayTracks[row]
                 
-                let trips = lstResult?.lstTrip.filter({$0.truncatedTripHeadSign == tripHeadSignItem})
-                
-                let stopTime = lstResult?.lstStopTime.filter{
+                if let song  =  lyricsProcessor.LyricsSearch(artistItem: trackItem.ArtistName, songItem: trackItem.CollectionName)
                     
-                    let x = $0.tripID
-                    let y = trips?.filter({$0.tripID == x})
-                    
-                    if ((y?.count)! > 0)
+                {
+                    if (trackItem.ArtistName  == nil)
                     {
-                        return true
+                        trackItem.ArtistName = ""
                     }
-                    else{
-                        return false
-                    }
-                }
-                
-                let stops = lstResult?.lstStop.filter{
-                    let x = $0.stopID
-                    let y = stopTime?.filter{$0.stopID == x}
                     
-                    if ((y?.count)! > 0)
+                    if ( trackItem.CollectionName == nil)
                     {
-                        return true
+                        trackItem.CollectionName = ""
                     }
-                    else{
-                        return false
+                    
+                    
+                    if  (trackItem.CollectionPrice  == nil)
+                    {
+                        trackItem.CollectionPrice = 0
                     }
+                    
+                    
+                    if (  trackItem.Currency  == nil )
+                    {
+                        trackItem.Currency = ""
+                    }
+                    
+                    
+                    if(  trackItem.TrackPrice  == nil )
+                    {
+                        trackItem.TrackPrice = 0
+                    }
+                    
+                    if(  trackItem.Currency  == nil )
+                    {
+                        trackItem.Currency = ""
+                    }
+                    
+                    if(  song.Song  == nil )
+                    {
+                        song.Song = ""
+                    }
+                    
+                    if(  song.Lyrics  == nil )
+                    {
+                        song.Lyrics = ""
+                    }
+                    
+                    if(  song.URL  == nil )
+                    {
+                        song.URL = ""
+                    }
+                    
+                    
+                    
+                    
+
+                    
+                    lyricsViewController.varArtistName =   trackItem.ArtistName!
+                    lyricsViewController.varCollectionName  = trackItem.CollectionName!
+                    lyricsViewController.varCollectionPrice = trackItem.CollectionPrice!
+                    lyricsViewController.varCurrency = trackItem.Currency!
+                    lyricsViewController.varTrackPrice = trackItem.TrackPrice!
+                    
+                    
+                    lyricsViewController.varSong = song.Song!
+                    
+                    lyricsViewController.varLyrics = song.Lyrics!
+                    
+                    lyricsViewController.varLyricsURL = song.URL!
                 }
-                //todo
-                mapViewController.lstResult = TransitResult()
-                mapViewController.lstResult?.lstStop = stops!
-                mapViewController.lstResult?.lstStopTime = stopTime!
-                mapViewController.lstResult?.lstTrip = trips!
+            
+               
+
                 
             }
             
         }
     }
-    */
+    
     
     
     

@@ -138,6 +138,12 @@ class Track
         
         self.TrackName = json["trackName"] as? String
 
+        
+        self.CollectionPrice = json["collectionPrice"] as? Double
+        self.TrackPrice = json["trackPrice"] as? Double
+        self.Currency = json["currency"] as? String
+
+
 
         
         

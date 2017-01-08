@@ -26,9 +26,21 @@ class LyricsProcessor
             return nil
         }
         
-        let filteredSong = song.filter({$0.Artist == artistItem && $0.Song == songItem}).first
+        if let filteredSong = song.filter({$0.Artist?.lowercased() == artistItem?.lowercased() && $0.Song?.lowercased() == songItem?.lowercased()}).first
+        {
+            return filteredSong
+            
+        }
+        
+        else
+        {
+            //The provided URL does not have any filtered song to return
+            
+            //For display purpose, returning the only default record.
+            return song.first
+        }
         
         
-        return filteredSong
+        
     }
 }

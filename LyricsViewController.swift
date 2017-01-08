@@ -10,9 +10,51 @@ import UIKit
 
 class LyricsViewController: UIViewController {
 
+    @IBOutlet weak var lblLyricsURL: UILabel!
+    @IBOutlet weak var lblLyrics: UILabel!
+    @IBOutlet weak var lblCollectionPrice: UILabel!
+    @IBOutlet weak var lblCollectionName: UILabel!
+    @IBOutlet weak var lblTrackPrice: UILabel!
+    @IBOutlet weak var lblSOng: UILabel!
+    @IBOutlet weak var lblArtisName: UILabel!
+    
+    
+    @IBOutlet weak var lblCurrency: UILabel!
+    
+    var varLyrics = String()
+    var varLyricsURL = String()
+    var varCollectionPrice = Double()
+    var varCollectionName = String()
+    var varTrackName = String()
+    var varTrackPrice = Double()
+    var varArtistName = String()
+    var varCurrency = String()
+    
+    var varSong = String()
+    
+    
+    
+    
+    var track = Track()
+    var song = Song()
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        lblArtisName.text = varArtistName
+        
+        lblCollectionName.text = varCollectionName
+        lblCollectionPrice.text = varCollectionPrice.description
+        lblCurrency.text = varCurrency
+        lblTrackPrice.text = varTrackPrice.description
+        
+    
+ 
+
+ 
+      lblSOng.text = varSong
+        lblLyrics.text = varLyrics
+        lblLyricsURL.text = varLyricsURL
         // Do any additional setup after loading the view.
     }
 
