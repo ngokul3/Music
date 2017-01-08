@@ -18,6 +18,7 @@ class LyricsViewController: UIViewController {
     @IBOutlet weak var lblSOng: UILabel!
     @IBOutlet weak var lblArtisName: UILabel!
     
+    @IBOutlet weak var lblTrackName: UILabel!
     @IBAction func btnexitclick(_ sender: Any) {
         
         self.dismiss(animated: false, completion: nil)
@@ -54,7 +55,7 @@ class LyricsViewController: UIViewController {
         lblCollectionPrice.text = varCollectionPrice.description
         lblCurrency.text = varCurrency
         lblTrackPrice.text = varTrackPrice.description
-        
+        lblTrackName.text   = varTrackName.description
     
  
 

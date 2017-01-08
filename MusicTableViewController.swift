@@ -91,6 +91,12 @@ class MusicTableViewController: UITableViewController {
                         trackItem.CollectionName = ""
                     }
                     
+                    if ( trackItem.TrackName == nil)
+                    {
+                        trackItem.TrackName = ""
+                    }
+
+                    
                     
                     if  (trackItem.CollectionPrice  == nil)
                     {
@@ -139,7 +145,9 @@ class MusicTableViewController: UITableViewController {
                     lyricsViewController.varCollectionPrice = trackItem.CollectionPrice!
                     lyricsViewController.varCurrency = trackItem.Currency!
                     lyricsViewController.varTrackPrice = trackItem.TrackPrice!
+                    lyricsViewController.varTrackName = trackItem.TrackName!
                     
+
                     
                     lyricsViewController.varSong = song.Song!
                     
