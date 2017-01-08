@@ -14,15 +14,64 @@ class MusicDataLoader
     let lyricsURL: NSURL = NSURL(string: "http://lyrics.wikia.com/api.php?func=getSong&artist=Tom+Waits&song=new+coat+of+paint&fmt=json")!
   
     private var lstTrack: [Track] = []
+    private var lstSong: [Song] = []
+    
+    var SongList : [Song]
+        {
+        get
+        {
+            if ( lstSong.count == 0)
+            {
+                if let items = parseCSV(lyricsURL as URL, encoding: String.Encoding.utf8)
+                {
+                    var song = Song()
+                    
+                    for item in  items{
+                        
+                        switch item.ItemKey
+                        {
+                        case "artist":
+                        song.Artist = item.ItemValue
+                        
+                        case "song":
+                        
+                            song.Song = item.ItemValue
+                        case "lyrics":
+                            
+                            song.Lyrics = item.ItemValue
+                        
+                        case "url":
+                            
+                            song.URL = item.ItemValue
+                        
+                        case "NextRecord":
+                            lstSong.append(song)
+                            song = Song()
+                        default:
+                            break
+                        }
+                       
+                        
+                    }
+                   
+                }
+
+            }
+            return lstSong
+        }
+        
+        set(songs) {
+            lstSong = songs
+            
+        }
+        
+    }
+    
     
     var TrackList : [Track]
         {
         get
         {
-            
-            
-                
-            
             if ( lstTrack.count == 0)
             {
                 LoadTrack(){
@@ -39,7 +88,6 @@ class MusicDataLoader
         }
         
     }
-    
     
    private func LoadTrack(completion: @escaping ([Track]) -> Void)
     {
@@ -80,7 +128,7 @@ class MusicDataLoader
     func parseCSV (_ contentsOfURL: URL, encoding: String.Encoding) -> [(ItemKey:String, ItemValue:String)]? {
         
         // Load the CSV file and parse it
-        let delimiter = ":"
+        let delimiter = "':"
         
         print(encoding)
         
@@ -146,6 +194,10 @@ class MusicDataLoader
                     let item = (ItemKey: values[0].replacingOccurrences(of: "\'", with: ""), ItemValue: values[1].replacingOccurrences(of: "\'", with: "").replacingOccurrences(of: ",", with: ""))
                     items?.append(item)
                     }
+                }
+                else if(items?.count != 0){
+                let item = (ItemKey: "NextRecord", ItemValue: "NextRecord")
+                items?.append(item)
                 }
             }
             

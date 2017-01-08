@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let lyricsURLRequest:  NSMutableURLRequest = NSMutableURLRequest(url: lyricsURL as URL)
 
         
-       // let _ = MusicDataManager.sharedTransitInstance.TrackList
+         let _ = MusicDataManager.sharedTransitInstance.SongList
+        let _ = MusicDataManager.sharedTransitInstance.TrackList
         
-        MusicDataManager.sharedTransitInstance.parseCSV(lyricsURL as URL, encoding: String.Encoding.utf8)
         
         
         return true
