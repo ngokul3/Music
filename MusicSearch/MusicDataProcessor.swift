@@ -14,6 +14,9 @@ class MusicDataProcessor
     func ProcessMusicSearch(searchItem: String?)->[Track]?
     {
         var lstTrack = MusicDataManager.sharedTransitInstance.TrackList
+       // let ss = searchItem.
+        
+        let searchItem = searchItem?.uppercased()
         
        
         guard  searchItem  != nil else
@@ -27,24 +30,24 @@ class MusicDataProcessor
             return nil
         }
         
-        let artistNameCount = lstTrack.filter{($0.ArtistName?.lowercased().contains(searchItem!.lowercased()))!}
-        let trackCount = lstTrack.filter{($0.TrackName?.lowercased().contains(searchItem!.lowercased()))!}
+        let artistNameCount = lstTrack.filter{($0.ArtistName?.uppercased().contains(searchItem!))!}
+        let trackCount = lstTrack.filter{($0.TrackName?.uppercased().contains(searchItem!))!}
         
         
         if artistNameCount.count > 0 {
  
-            lstTrack = lstTrack.filter{($0.ArtistName?.contains(searchItem!))!}
+            lstTrack = lstTrack.filter{($0.ArtistName?.uppercased().contains(searchItem!))!}
             
             }
 
             
         else  if trackCount.count > 0 {
             
-            lstTrack = lstTrack.filter{($0.TrackName?.contains(searchItem!))!}
+            lstTrack = lstTrack.filter{($0.TrackName?.uppercased().contains(searchItem!))!}
             
         }
         else{
-            return nil
+            return lstTrack
         }
         
                 return lstTrack

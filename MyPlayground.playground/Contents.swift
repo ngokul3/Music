@@ -9,6 +9,14 @@ print (33)
 
 
 
+
+var ss = "String Ssd"
+
+print(ss.lowercased())
+
+
+
+
 class Track
 {
     
@@ -49,9 +57,15 @@ class Track
     
     
 }
+var testarra = [Track]()
+
+var tess = Track()
 
 
+testarra.append(tess)
 
+
+/*
 //let TopAppURL = "https://itunes.apple.com/search?term=tom+waits"
 
 
@@ -262,7 +276,7 @@ let task = session.dataTask(with: urlRequest as URLRequest) {
 }
 
 task.resume()
- 
+ */
 
  
 

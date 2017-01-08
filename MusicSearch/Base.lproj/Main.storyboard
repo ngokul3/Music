@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Lyrics View Controller-->
+        <!--Music Detail-->
         <scene sceneID="d3u-t1-D42">
             <objects>
                 <viewController id="WxN-Nw-wGP" customClass="LyricsViewController" customModule="MusicSearch" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,49 +78,57 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sst-cz-3Zx">
-                                <rect key="frame" x="200" y="78" width="162" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPX-is-j6S">
-                                <rect key="frame" x="179" y="125" width="115" height="21"/>
+                                <rect key="frame" x="211" y="78" width="151" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGY-Fc-4ad">
-                                <rect key="frame" x="187" y="178" width="162" height="21"/>
+                                <rect key="frame" x="211" y="178" width="138" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwR-B5-e7h">
-                                <rect key="frame" x="166" y="226" width="162" height="21"/>
+                                <rect key="frame" x="211" y="226" width="162" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBm-bn-ZSi">
-                                <rect key="frame" x="185" y="280" width="162" height="21"/>
+                                <rect key="frame" x="211" y="280" width="162" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Apv-Of-lMy">
-                                <rect key="frame" x="172" y="337" width="162" height="21"/>
+                                <rect key="frame" x="211" y="337" width="157" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmU-CG-bik">
-                                <rect key="frame" x="271" y="125" width="76" height="21"/>
+                                <rect key="frame" x="299" y="124" width="76" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1yE-1q-5yj">
+                                <rect key="frame" x="16" y="397" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="btnexitclick:" destination="WxN-Nw-wGP" eventType="touchUpInside" id="sIk-vV-4fP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="...." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPX-is-j6S">
+                                <rect key="frame" x="211" y="123" width="80" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -129,7 +137,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Music Detail" id="NzY-cu-0cC"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btnexit" destination="1yE-1q-5yj" id="nau-9H-gfW"/>
                         <outlet property="lblArtisName" destination="i1o-zG-sVj" id="OLC-m8-fpz"/>
                         <outlet property="lblCollectionName" destination="ZGY-Fc-4ad" id="3Cr-Ms-VJR"/>
                         <outlet property="lblCollectionPrice" destination="BwR-B5-e7h" id="U2z-Gb-GJf"/>
@@ -138,12 +150,13 @@
                         <outlet property="lblLyricsURL" destination="Apv-Of-lMy" id="1Q6-w1-Fp3"/>
                         <outlet property="lblSOng" destination="Sst-cz-3Zx" id="8Vb-JN-NaB"/>
                         <outlet property="lblTrackPrice" destination="fPX-is-j6S" id="mSb-2x-KhY"/>
+                        <segue destination="II2-6G-2B2" kind="unwind" identifier="backtomusic" unwindAction="unwindToMusicWithSender:" id="cTo-1r-Txd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJV-wa-u6m" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <barButtonItem title="Back" id="V8p-Gh-dF2"/>
+                <exit id="II2-6G-2B2" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1380" y="559.97001499250382"/>
+            <point key="canvasLocation" x="-440.80000000000001" y="559.97001499250382"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -192,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
         <!--Music Table View Controller-->
         <scene sceneID="9KO-rf-wKe">
@@ -231,7 +244,7 @@
                                 <connections>
                                     <outlet property="lblArtist" destination="c3C-Pr-Toe" id="GTN-Zf-iwp"/>
                                     <outlet property="lblTrack" destination="0vo-Za-nxW" id="iha-Ot-w3y"/>
-                                    <segue destination="WxN-Nw-wGP" kind="showDetail" identifier="showLyrics" id="rIh-o5-hF2"/>
+                                    <segue destination="WxN-Nw-wGP" kind="presentation" identifier="showLyrics" id="QaN-WL-fd8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -246,7 +259,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KRQ-hm-1qo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-234.40000000000001" y="814.99250374812596"/>
+            <point key="canvasLocation" x="704.79999999999995" y="814.99250374812596"/>
         </scene>
     </scenes>
 </document>

@@ -18,6 +18,13 @@ class LyricsViewController: UIViewController {
     @IBOutlet weak var lblSOng: UILabel!
     @IBOutlet weak var lblArtisName: UILabel!
     
+    @IBAction func btnexitclick(_ sender: Any) {
+        
+        self.dismiss(animated: false, completion: nil)
+     //   self.performSegue(withIdentifier: "backtomusic", sender: nil)
+        
+    }
+    @IBOutlet weak var btnexit: UIButton!
     
     @IBOutlet weak var lblCurrency: UILabel!
     
@@ -63,7 +70,25 @@ class LyricsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    @IBAction func unwindToMusic(sender: UIStoryboardSegue) {
+       
+        }
+ 
+    
+    
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+       if let  musicTableViewController = segue.destination as? MusicTableViewController
+       {musicTableViewController.view.reloadInputViews()
+        
+        }
+        
+        
+        
+    }
     /*
     // MARK: - Navigation
 
