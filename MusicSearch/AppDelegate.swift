@@ -16,8 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let lyricsURL: NSURL = NSURL(string: "http://lyrics.wikia.com/api.php?func=getSong&artist=Tom+Waits&song=new+coat+of+paint&fmt=json")!
+        let lyricsURLRequest:  NSMutableURLRequest = NSMutableURLRequest(url: lyricsURL as URL)
+
         
-        let _ = MusicDataManager.sharedTransitInstance.TrackList
+       // let _ = MusicDataManager.sharedTransitInstance.TrackList
+        
+        MusicDataManager.sharedTransitInstance.parseCSV(lyricsURL as URL, encoding: String.Encoding.utf8)
+        
         
         return true
     }

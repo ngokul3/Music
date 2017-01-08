@@ -58,7 +58,6 @@
 		C0EB823C1E215CEC0095515C /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		C0EB823E1E215EE30095515C /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		C0EB82401E215FEE0095515C /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
-		C0EB82411E2165100095515C /* MyPlayground2.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground2.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +98,6 @@
 		C0EB82011E21586D0095515C = {
 			isa = PBXGroup;
 			children = (
-				C0EB82411E2165100095515C /* MyPlayground2.playground */,
 				C0EB82401E215FEE0095515C /* MyPlayground.playground */,
 				C0EB820C1E21586D0095515C /* MusicSearch */,
 				C0EB82211E21586D0095515C /* MusicSearchTests */,

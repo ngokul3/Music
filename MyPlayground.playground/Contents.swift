@@ -144,74 +144,100 @@ class Track
     
 
 */
-
-/*
-func parseCSV (contentsOfURL: NSURL, encoding: String.Encoding, error: NSErrorPointer) -> [(name:String, detail:String, price: String)]? {
+func parseCSV (_ contentsOfURL: URL, encoding: String.Encoding) -> [(stopID:String, stopCode:String, stopName: String)]? {
+    
     // Load the CSV file and parse it
     let delimiter = ","
-    var items:[(name:String, detail:String, price: String)]?
+    var items:[(stopID:String, stopCode:String, stopName: String)]?
     
-    if let content = String(contentsOfURL: contentsOfURL, encoding: encoding, error: error) {
-        items = []
-        let lines:[String] = content.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet()) as [String]
+    do {
+        let content = try String(contentsOf: contentsOfURL, encoding: encoding)
         
+        
+        print(encoding)
+        
+        items = []
+        let lines:[String] = content.components(separatedBy: CharacterSet.newlines) as [String]
+        
+        print(lines)
+        /*
         for line in lines {
             var values:[String] = []
             if line != "" {
                 // For a line with double quotes
                 // we use NSScanner to perform the parsing
-                if line.rangeOfString("\"") != nil {
+                if line.range(of: "\"") != nil {
                     var textToScan:String = line
                     var value:NSString?
-                    var textScanner:NSScanner = NSScanner(string: textToScan)
+                    var textScanner:Scanner = Scanner(string: textToScan)
                     while textScanner.string != "" {
                         
-                        if (textScanner.string as NSString).substringToIndex(1) == "\"" {
+                        if (textScanner.string as NSString).substring(to: 1) == "\"" {
                             textScanner.scanLocation += 1
-                            textScanner.scanUpToString("\"", intoString: &value)
+                            textScanner.scanUpTo("\"", into: &value)
                             textScanner.scanLocation += 1
                         } else {
-                            textScanner.scanUpToString(delimiter, intoString: &value)
+                            textScanner.scanUpTo(delimiter, into: &value)
                         }
                         
                         // Store the value into the values array
                         values.append(value as! String)
                         
                         // Retrieve the unscanned remainder of the string
-                        if textScanner.scanLocation < count(textScanner.string) {
-                            textToScan = (textScanner.string as NSString).substringFromIndex(textScanner.scanLocation + 1)
+                        if textScanner.scanLocation < textScanner.string.characters.count {
+                            textToScan = (textScanner.string as NSString).substring(from: textScanner.scanLocation + 1)
                         } else {
                             textToScan = ""
                         }
-                        textScanner = NSScanner(string: textToScan)
+                        textScanner = Scanner(string: textToScan)
                     }
                     
                     // For a line without double quotes, we can simply separate the string
                     // by using the delimiter (e.g. comma)
                 } else  {
-                    values = line.componentsSeparatedByString(delimiter)
+                    
+                    
+                    values = line.components(separatedBy: delimiter)
                 }
                 
                 // Put the values into the tuple and add it to the items array
-                let item = (name: values[0], detail: values[1], price: values[2])
+                let item = (stopID: values[0], stopCode: values[1], stopName: values[2])
                 items?.append(item)
             }
         }
+        
+        */
+ 
+        //existing code
+        //}
+        //}
+        
+        
+        
+        
+    } catch {
+        print(error)
     }
     
     return items
 }
 
-*/
 
 let requestURL: NSURL = NSURL(string: "https://itunes.apple.com/search?term=tom+waits")!
 let urlRequest: NSMutableURLRequest = NSMutableURLRequest(url: requestURL as URL)
+
 let session = URLSession.shared
 
-print(23)
+
+//print(23)
+
+
+let lyricsURL: NSURL = NSURL(string: "http://lyrics.wikia.com/api.php?func=getSong&artist=Tom+Waits&song=new+coat+of+paint&fmt=json")!
+let lyricsURLRequest:  NSMutableURLRequest = NSMutableURLRequest(url: lyricsURL as URL)
 
 
 
+let _ = parseCSV(lyricsURL as URL, encoding: String.Encoding.utf8)
 
 
 let task = session.dataTask(with: urlRequest as URLRequest) {
@@ -220,7 +246,7 @@ let task = session.dataTask(with: urlRequest as URLRequest) {
     let httpResponse = response as! HTTPURLResponse
     let statusCode = httpResponse.statusCode
     
-    print(1)
+   // print(1)
     
     
     if let json = try? JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! [String:AnyObject] {
@@ -228,7 +254,7 @@ let task = session.dataTask(with: urlRequest as URLRequest) {
         for case let result in (json["results"] as? [[String: AnyObject]])!  {
              let name = result["previewUrl"] as! String
             
-            print(name)
+           /// print(name)
             
         }
     }
@@ -236,6 +262,8 @@ let task = session.dataTask(with: urlRequest as URLRequest) {
 }
 
 task.resume()
+ 
+
  
 
 
