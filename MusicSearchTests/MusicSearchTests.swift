@@ -120,22 +120,22 @@ class MusicSearchTests: XCTestCase {
         MusicDataManager.sharedTransitInstance.TrackList = lstTrack
         
         let processor = MusicDataProcessor()
-        let tracks = processor.ProcessMusicSearch(searchableEntity: SearchableMusicEntity.ArtistName, searchItem: "AN1")
+        let tracks = processor.ProcessMusicSearch(searchableEntity: "ArtistName", searchItem: "AN1")
         
         XCTAssertEqual(tracks?.count, 3)
         
         
-        let tracks2 = processor.ProcessMusicSearch(searchableEntity: SearchableMusicEntity.CollectionName, searchItem: "CN5")
+        let tracks2 = processor.ProcessMusicSearch(searchableEntity: "CollectionName", searchItem: "CN5")
         
         XCTAssertEqual(tracks2?.count, 2)
         
         
-        let tracks3 = processor.ProcessMusicSearch(searchableEntity: SearchableMusicEntity.TrackName, searchItem: "TN12")
+        let tracks3 = processor.ProcessMusicSearch(searchableEntity: "TrackName", searchItem: "TN12")
         
         XCTAssertEqual(tracks3?.count, 0)
         
         
-        let tracks4 = processor.ProcessMusicSearch(searchableEntity: SearchableMusicEntity.TrackName, searchItem: "TN8")
+        let tracks4 = processor.ProcessMusicSearch(searchableEntity: "TrackName", searchItem: "TN8")
         
         XCTAssertEqual(tracks4?.count, 1)
         

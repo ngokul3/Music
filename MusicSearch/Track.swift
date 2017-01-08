@@ -59,6 +59,9 @@ public enum SearchableMusicEntity {
         case .CollectionName: return "CollectionName";
         }
     }
+    
+    
+   
 }
 
 
@@ -149,9 +152,9 @@ class Track
         self.CollectionId = json["collectionId"] as? IntMax
         self.TrackId = json["trackId"] as? IntMax
 
-        self.ArtistName = json["ArtistName"] as? String
+        self.ArtistName = json["artistName"] as? String
 
-        self.CollectionName = json["CollectionName"] as? String
+        self.CollectionName = json["collectionName"] as? String
 
         
         

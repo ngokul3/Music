@@ -12,6 +12,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     @IBOutlet weak var txtSearchableEntity: UITextField!
     @IBOutlet weak var pkSearcableEntiries: UIPickerView!
+    @IBAction func btnSearch(_ sender: Any) {
+        
+        
+        let musicProcessor = MusicDataProcessor()
+        
+        let lstTrack = musicProcessor.ProcessMusicSearch(searchableEntity: txtSearchableEntity.text, searchItem: txtSearchItem.text)
+    }
+    @IBAction func txtSearchItemEndEdit(_ sender: Any) {
+        
+        pkSearcableEntiries.isHidden = true
+
+    }
     
     @IBOutlet weak var txtSearchItem: UITextField!
     @IBAction func OntxtSearchablefieldEndEdit(_ sender: Any) {

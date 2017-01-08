@@ -11,7 +11,7 @@ import Foundation
 
 class MusicDataProcessor
 {
-    func ProcessMusicSearch(searchableEntity: SearchableMusicEntity?, searchItem: String?)->[Track]?
+    func ProcessMusicSearch(searchableEntity: String?, searchItem: String?)->[Track]?
     {
         var lstTrack = MusicDataManager.sharedTransitInstance.TrackList
         
@@ -31,20 +31,21 @@ class MusicDataProcessor
         
         switch searchableEntity!
         {
-        case .ArtistName:
+        case SearchableMusicEntity.ArtistName.description:
             lstTrack = lstTrack.filter({$0.ArtistName == searchItem})
             
             
-        case .CollectionName:
+        case SearchableMusicEntity.CollectionName.description:
             
             lstTrack = lstTrack.filter({$0.CollectionName == searchItem})
             
-        case .TrackName:
+        case SearchableMusicEntity.TrackName.description:
             
             
             lstTrack = lstTrack.filter({$0.TrackName == searchItem})
             
-       
+        default:
+            break
         }
         
         return lstTrack
