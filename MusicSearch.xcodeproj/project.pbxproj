@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C08DC0051E21EFCE00A01CB7 /* MusicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08DC0041E21EFCE00A01CB7 /* MusicTableViewController.swift */; };
 		C098A01A1E218B3600768C28 /* MusicDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098A0191E218B3600768C28 /* MusicDataLoader.swift */; };
 		C098A01C1E218B4900768C28 /* MusicDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098A01B1E218B4900768C28 /* MusicDataManager.swift */; };
 		C098A01E1E21986800768C28 /* MusicDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098A01D1E21986800768C28 /* MusicDataProcessor.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C08DC0041E21EFCE00A01CB7 /* MusicTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicTableViewController.swift; sourceTree = "<group>"; };
 		C098A0191E218B3600768C28 /* MusicDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDataLoader.swift; sourceTree = "<group>"; };
 		C098A01B1E218B4900768C28 /* MusicDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDataManager.swift; sourceTree = "<group>"; };
 		C098A01D1E21986800768C28 /* MusicDataProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicDataProcessor.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		C0EB82011E21586D0095515C = {
 			isa = PBXGroup;
 			children = (
+				C08DC0041E21EFCE00A01CB7 /* MusicTableViewController.swift */,
 				C0EB82401E215FEE0095515C /* MyPlayground.playground */,
 				C0EB820C1E21586D0095515C /* MusicSearch */,
 				C0EB82211E21586D0095515C /* MusicSearchTests */,
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0EB82101E21586D0095515C /* ViewController.swift in Sources */,
+				C08DC0051E21EFCE00A01CB7 /* MusicTableViewController.swift in Sources */,
 				C0EB823F1E215EE30095515C /* Song.swift in Sources */,
 				C0EB820E1E21586D0095515C /* AppDelegate.swift in Sources */,
 				C098A01E1E21986800768C28 /* MusicDataProcessor.swift in Sources */,

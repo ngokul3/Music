@@ -46,6 +46,7 @@ class MusicDataLoader
                         
                         case "NextRecord":
                             lstSong.append(song)
+                            
                             song = Song()
                         default:
                             break
@@ -214,6 +215,8 @@ class MusicDataLoader
             print(error)
         }
         
+    //    if(items?.contains(where: <#T##(Self.Iterator.Element) throws -> Bool#>))
+        //items?.removeLast()
         return items
     }
 
